@@ -1,0 +1,87 @@
+{{!< default}}
+<div class="row page post">
+	<div class="slidenav">
+		<aside id="menu" class="blue-grey darken-1" style="background-image:url({{@blog.cover}});">
+			<div class="bg-container">
+				<div class="profile">
+					<div class="avatar">
+						<a href="#open"><img src="{{@blog.logo}}" class="z-depth-4"></a>
+						<span>{{@blog.title}}</span>
+						<p>{{@blog.description}}</p>
+					</div>
+					<div class="short-line"></div>
+					{{navigation}}
+					<div class="short-line short"></div>
+					<ul class="link">
+						<li><a href=""><i class="fa fa-weibo"></i></a></li>
+						<li><a href=""><i class="fa fa-github"></i></a></li>
+						<li><a href=""><i class="fa fa-envelope"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</aside>
+		<div class="closeslide"></div>
+	</div>
+	
+	<main> 
+		{{#post}}
+		<nav>
+			<header class="nav-wrapper blue-grey">
+				<div>
+					<a id="show-slide-nav"><i class="fa fa-bars fa-lg"></i></a>
+					<p>
+						<span class="header-title">行者无疆</span>
+						<span class="post-title">{{title}}</span>
+					</p>
+					<span></span>
+				</div>
+			</header>
+		</nav>
+		
+		<div class="contents content-in z-depth-2">
+			
+			<article class="posts-content markdown-body">
+				<p class="posts-title">{{title}}</p>
+				<span class="post-time"><i class="fa fa-calendar"></i> {{date format="YYYY-MM-DD HH:mm:ss"}}</span>
+				<div class="post-html">
+					{{content}}
+				</div>
+			</article>
+		</div>
+		<div class="row more-article content-in">
+			{{#prev_post}}
+			<div class="col s6" style="padding-left:0;">
+		        <div class="card">
+		            <div class="card-image card-pre">
+		                <img src="/assets/img/sample.jpg">
+		                    <span class="card-title">{{title}}</span>
+		                </img>
+		            </div>
+		            <div class="card-content"><p>{{excerpt}}</p></div>
+		            <div class="card-action"><a href="{{url}}">前一篇</a></div>
+		        </div>
+		    </div>
+			{{/prev_post}}
+
+			{{#next_post}}
+			<div class="col s6" style="padding-right:0;">
+		        <div class="card">
+		            <div class="card-image card-next">
+		                <img src="/assets/img/sample.jpg">
+		                    <span class="card-title">{{title}}</span>
+		                </img>
+		            </div>
+		            <div class="card-content"><p>{{excerpt}}</p></div>
+		            <div class="card-action" style="text-align: right;"><a href="{{url}}">后一篇</a></div>
+		        </div>
+		    </div>	
+			{{/next_post}}
+
+			{{> comments}}
+		</div>
+		{{/post}} 
+		<div class="content-in" style="margin-top: 50px;">
+			{{> footer}} 
+		</div>
+	</main>
+</div>

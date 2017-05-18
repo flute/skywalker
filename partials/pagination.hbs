@@ -1,0 +1,13 @@
+<nav class="pagination" role="navigation">
+    {{#if prev}}
+        <a class="btn-floating waves-effect waves-light red" href="{{page_url prev}}#open"><i class="fa fa-angle-left"></i></a>
+    {{else}}
+    	<a class="btn-floating disabled"><i class="fa fa-angle-left"></i></a>
+    {{/if}}
+    <span class="page-number">{{page}} / {{pages}}</span>
+    {{#if next}}
+    	<a class="btn-floating waves-effect waves-light red" href="{{page_url next}}#open"><i class="fa fa-angle-right"></i></a>
+    {{else}}
+    	<a class="btn-floating disabled"><i class="fa fa-angle-right"></i></a>
+    {{/if}}
+</nav>

@@ -1,0 +1,57 @@
+{{!< default}}
+<div class="row page pages">
+    {{> aside}}
+    <main>
+        <div class="contents content-in about">
+            {{#post}}
+            <article">
+                <div style="text-align:center"><h4 class="archives-title">Archives</h4></div>
+				<article class="archives"></article>
+            </article">
+            <div class="noborderfooter" style="margin-top:50px;">
+                {{> footer}}
+            </div>
+        </div>
+
+    </main>
+</div>
+{{/post}}
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/moment.js/2.14.1/moment.min.js"></script>
+<script type = "text/javascript"> 
+jQuery(document).ready(function() {
+    $.get(ghost.url.api('posts', {
+        fields: "title,slug,published_at",
+        limit: 'all',
+        order: "published_at desc"
+    })).done(function(data) {
+        var posts = data.posts;
+        var count = posts.length;
+        for (var i = 0; i < count; i++) {
+            var time = moment(posts[i].published_at).utcOffset("-06:00");
+            var year = time.get('y');
+            var month = time.get('M') + 1;
+            if (month < 10) month = "0" + month;
+            var date = time.get('D');
+            if (date < 10) date = "0" + date;
+            var title = posts[i].title;
+            var url = "http://www.ldsun.com/" + posts[i].slug;
+            if (i > 0) {
+                var pre_month = moment(posts[i - 1].published_at).utcOffset("-08:00").get('month') + 1;
+                if (month == pre_month) {
+                    var html = "<li><time>" + date + "日</time><a href='" + url + "'>" + title + "</a></li>";
+                    $(html).appendTo(".archives .list-" + year + "-" + month)
+                } else {
+                    var html = "<div class='item'><h3><i class='fa fa-calendar fa-fw' aria-hidden='true'></i> " + year + "-" + month + "</h3><ul class='archives-list list-" + year + "-" + month + "'><li><time>" + date + "日</time><a href='" + url + "'>" + title + "</a></li></ul></div>";
+                    $(html).appendTo('.archives')
+                }
+            } else {
+                var html = "<div class='item'><h3><i class='fa fa-calendar fa-fw' aria-hidden='true'></i> " + year + "-" + month + "</h3><ul class='archives-list list-" + year + "-" + month + "'><li><time>" + date + "日</time><a href='" + url + "'>" + title + "</a></li></ul></div>";
+                $(html).appendTo('.archives')
+            }
+        }
+    }).fail(function(err) {
+        console.log(err)
+    })
+});
+</script>

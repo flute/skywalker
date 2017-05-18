@@ -1,0 +1,30 @@
+{{!< default}}
+<div class="row page pages">
+    {{> aside}}
+    <main>
+        <div class="contents content-in about">
+            {{#post}}
+            <article">
+                <header>
+                    <div>
+                        {{#if image}}
+                        <img alt="{{title}}" id="post-image" src="{{image}}">
+                        {{/if}}
+                            <h4 id="post-title">
+                                {{title}}
+                            </h4>
+                        </img>
+                    </div>
+                </header>
+                <div id="post-content markdown-body">
+                    {{content}}
+                </div>
+            </article">
+            <div style="margin-top:50px;">
+                {{> footer}}
+            </div>
+        </div>
+
+    </main>
+</div>
+{{/post}}

@@ -1,0 +1,45 @@
+{{!< default}}
+<div class="row page common index">
+	<div class="slidenav">
+		{{> aside}}
+		<div class="closeslide"></div>
+	</div>
+	
+	<main> 
+		<nav>
+			<header class="nav-wrapper blue-grey">
+				<div>
+					<a id="show-slide-nav"><i class="fa fa-bars fa-lg"></i></a>
+					<p>
+						<span class="header-title">{{@blog.title}}</span>
+					</p>
+					<span></span>
+				</div>
+			</header>
+		</nav>
+		<div class="contents content-in">
+			{{#foreach posts}}
+				<div class="post-item">
+					<a class="readmore" href="{{url}}"></a>
+					<div class="item-header">
+						<p>{{title}}</p>
+						<span><i class="fa fa-calendar"></i> {{date format="YYYY-MM-DD HH:mm:ss"}}</span>
+					</div>
+					<div class="item-content">
+						<p>{{excerpt}}</p>
+					</div>
+					{{#if tags}}
+						<div class="item-footer">
+						{{#foreach tags}}
+							<a class="tag" href="{{url}}" title="{{name}}">{{name}}</a> 
+						{{/foreach}}
+						</div>
+					{{/if}}
+				</div>
+			{{/foreach}}
+			{{pagination}}
+			{{> footer}}
+		</div>
+		
+	</main>
+</div>
