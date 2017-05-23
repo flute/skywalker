@@ -1,5 +1,6 @@
 # skywalker
 
+<<<<<<< HEAD
 一款material design风格的ghost博客主题
 
 [demo](https://www.ldsun.com)
@@ -31,3 +32,9 @@
 
 
 
+=======
+A material design style ghost theme
+
+[demo](https://www.ldsun.com)
+
+>>>>>>> 57da3f2fc0bda097a6994b637df84446f587d490
