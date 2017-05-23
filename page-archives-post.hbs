@@ -1,13 +1,27 @@
 {{!< default}}
 <div class="row page pages">
-    {{> aside}}
+    <div class="slidenav">
+        {{> aside}}
+        <div class="closeslide"></div>
+    </div>
     <main>
+    	<nav>
+            <header class="nav-wrapper blue-grey">
+                <div>
+                    <a id="show-slide-nav"><i class="fa fa-bars fa-lg"></i></a>
+                    <p>
+                        <span class="header-title">{{@blog.title}}</span>
+                    </p>
+                    <span></span>
+                </div>
+            </header>
+        </nav>
         <div class="contents content-in about">
             {{#post}}
-            <article">
+            <article>
                 <div style="text-align:center"><h4 class="archives-title">Archives</h4></div>
 				<article class="archives"></article>
-            </article">
+            </article>
             <div class="noborderfooter" style="margin-top:50px;">
                 {{> footer}}
             </div>

@@ -19,7 +19,7 @@ if( $(window).width() >= 768 ){
 }else{
 	$('.contents').css('width', $(window).width()-30 );
 	$('.markdown-body').css('max-width', $(window).width() );
-	if( $('.page').hasClass('index') ){
+	if( $('.page').hasClass('index') || $('.page').hasClass('pages') ){
 		$('#show-slide-nav').click(function(event) {
 			if( $('#menu').hasClass('open') ){
 				//$('#menu').removeClass('open').css({'opacity':'0','width':'0px'});
@@ -54,7 +54,7 @@ if( $(window).width() >= 768 ){
 		$('.slidenav').removeClass('open');
 	})
 }else{
-	if( $('.page').hasClass('index') ){
+	if( $('.page').hasClass('index') || $('.page').hasClass('pages') ){
 		// close slide nav
 		$('.closeslide').click(function(){
 			$('#menu').removeClass('open').css({'left':'-240px'});

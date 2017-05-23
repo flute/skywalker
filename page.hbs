@@ -1,10 +1,24 @@
 {{!< default}}
 <div class="row page pages">
-    {{> aside}}
+    <div class="slidenav">
+        {{> aside}}
+        <div class="closeslide"></div>
+    </div>
     <main>
+        <nav>
+            <header class="nav-wrapper blue-grey">
+                <div>
+                    <a id="show-slide-nav"><i class="fa fa-bars fa-lg"></i></a>
+                    <p>
+                        <span class="header-title">{{@blog.title}}</span>
+                    </p>
+                    <span></span>
+                </div>
+            </header>
+        </nav>
         <div class="contents content-in">
             {{#post}}
-            <article">
+            <article>
                 <header>
                     <div>
                         {{#if image}}
@@ -19,7 +33,7 @@
                 <div id="post-content markdown-body">
                     {{content}}
                 </div>
-            </article">
+            </article>
             <div style="margin-top:50px;">
                 {{> footer}}
             </div>
