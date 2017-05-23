@@ -1,6 +1,6 @@
 # skywalker
 
-一款material design风格的ghost博客主题
+一款material design风格的响应式简约ghost博客主题
 
 [demo](https://www.ldsun.com)
 
@@ -20,8 +20,8 @@
 ### Screenshoot
 * mobile：
 
-![mobile](./screenshoot/m1.png)![mobile](./screenshoot/m2.png)
-![mobile](./screenshoot/m3.png)![mobile](./screenshoot/m4.png)
+![mobile](./screenshoot/m1.png =360)![mobile](./screenshoot/m2.png =360)
+![mobile](./screenshoot/m3.png =360)![mobile](./screenshoot/m4.png =360)
 
 * pc
 
