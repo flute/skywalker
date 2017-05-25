@@ -22,7 +22,6 @@ if( $(window).width() >= 768 ){
 	if( $('.page').hasClass('index') || $('.page').hasClass('pages') ){
 		$('#show-slide-nav').click(function(event) {
 			if( $('#menu').hasClass('open') ){
-				//$('#menu').removeClass('open').css({'opacity':'0','width':'0px'});
 				$('#menu').removeClass('open').css({'left':'-240px'});
 				$('.slidenav').addClass('open');
 			}else{
@@ -34,7 +33,6 @@ if( $(window).width() >= 768 ){
 	}else if( $('.page').hasClass('post') ){
 		$('#show-slide-nav').click(function(event) {
 			if( $('#menu').hasClass('open') ){
-				//$('#menu').removeClass('open').css({'opacity':'0','width':'0px'});
 				$('#menu').removeClass('open').css({'left':'-240px'});
 				$('.slidenav').removeClass('open');
 			}else{
@@ -97,7 +95,6 @@ $('.post main').scroll(function (){
 			$('.post nav').addClass('fixtop');$('.post .contents').addClass('fixtop');
 		} 
 	}
-	//console.log(sTop);
 });
 // bing background
 if( $('.page').hasClass('post') ){
@@ -109,7 +106,6 @@ if( $('.page').hasClass('post') ){
 			if( result.status.code === 200 ){
 				var url = result.data.url;
 					url = 'url('+url+')';
-				//$('.post header.nav-wrapper').css({'background':url,'background-size': 'cover','background-position':'50% 50%', 'background-attachment':'fixed'});
 				$('.post header.nav-wrapper').css('background',url+' center center / cover  no-repeat fixed')
 			}else{
 				console.log( result.status.message )
@@ -128,4 +124,45 @@ if( $('.page').hasClass('post') ){
 	$('.card-pre img').prop('src', pre);
 	$('.card-next img').prop('src', next);
 }
-
+// material design button effect
+var addRippleEffect = function (e) {
+	console.log('233')
+    var target = e.target;
+    var rect = target.getBoundingClientRect();
+    var ripple = target.querySelector('.ripple');
+    if (!ripple) {
+        ripple = document.createElement('span');
+        ripple.className = 'ripple';
+        ripple.style.height = ripple.style.width = Math.max(rect.width, rect.height) + 'px';
+        target.appendChild(ripple);
+    }
+    ripple.classList.remove('show');
+    var top = e.pageY - rect.top - ripple.offsetHeight / 2 - document.body.scrollTop;
+    var left = e.pageX - rect.left - ripple.offsetWidth / 2 - document.body.scrollLeft;
+    ripple.style.top = top + 'px';
+    ripple.style.left = left + 'px';
+    ripple.classList.add('show');
+    return false;
+}
+$('.waves-effect').click(function(e){
+	addRippleEffect(e);
+})
+// highlight.js
+$(document).ready(function() {
+	$('pre code').each(function(i, block) {
+		if( !$(this).hasClass('hljs') ){
+			$(this).addClass('hljs')
+		}
+		// hljs line number
+		var lines = $(this).text().split('\n').length - 1;
+		var $numbering = $('<ul/>').addClass('pre-numbering');
+		$(this)
+		    .addClass('has-numbering')
+		    .parent()
+		    .append($numbering);
+		for(i=1;i<=lines;i++){
+		    $numbering.append($('<li/>').text(i));
+		}
+	});
+});
+hljs.initHighlightingOnLoad();

@@ -5,37 +5,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<title>{{meta_title}}</title>
 	{{ghost_head}}
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
-	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="/assets/css/github-markdown.css">
-	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+	<link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/assets/css/app.min.css">
 </head>
 <body>
 	{{{body}}}
 	{{ghost_head}}
-<script src="/assets/js/jquery.min.js"></script>
-<script src="/assets/js/materialize.min.js"></script>
+<script src="/assets/js/zepto.min.js"></script>
 <script src="/assets/js/highlight.min.js"></script>
-<script src="/assets/js/app.js"></script>
-<script>
-$(document).ready(function() {
-	$('pre code').each(function(i, block) {
-		if( !$(this).hasClass('hljs') ){
-			$(this).addClass('hljs')
-		}
-		// hljs line number
-		var lines = $(this).text().split('\n').length - 1;
-		var $numbering = $('<ul/>').addClass('pre-numbering');
-		$(this)
-		    .addClass('has-numbering')
-		    .parent()
-		    .append($numbering);
-		for(i=1;i<=lines;i++){
-		    $numbering.append($('<li/>').text(i));
-		}
-	});
-});
-hljs.initHighlightingOnLoad();
-</script>
+<script src="/assets/js/app.min.js"></script>
 </body>
 </html>
