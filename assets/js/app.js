@@ -104,7 +104,7 @@ if( $('.page').hasClass('post') ){
 		dataType:'jsonp',
 		success:function(result){
 			if( result.status.code === 200 ){
-				var url = result.data.url;
+				var url = result.data.original_pic;
 					url = 'url('+url+')';
 				$('.post header.nav-wrapper').css('background',url+' center center / cover  no-repeat fixed')
 			}else{
