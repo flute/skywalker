@@ -98,15 +98,23 @@ $('.post main').scroll(function (){
 });
 // bing background
 if( $('.page').hasClass('post') ){
+	var idx = Math.random()*1000;
 	$.ajax({
 		method:'get',
-		url:'https://bing.ioliu.cn/v1/rand?type=json',
+		url:'https://cn.bing.com/HPImageArchive.aspx?format=js&idx='+idx+'&n=3',
 		dataType:'jsonp',
 		success:function(result){
-			if( result.status.code === 200 ){
-				var url = result.data.original_pic;
-					url = 'url('+url+')';
-				$('.post header.nav-wrapper').css('background',url+' center center / cover  no-repeat fixed')
+			console.log(result)
+			if( result && result.images.length>0 ){
+					
+				var bg = getImageUrl( result.images[0].url );
+				var pre = getImageUrl( result.images[1].url );
+				var next = getImageUrl( result.images[2].url );
+				//nav-bg
+				$('.post header.nav-wrapper').css('background',bg+' center center / cover  no-repeat');
+				//pre/next post
+				$('.card-pre img').prop('src', pre);
+				$('.card-next img').prop('src', next);
 			}else{
 				console.log( result.status.message )
 			}
@@ -115,14 +123,11 @@ if( $('.page').hasClass('post') ){
 			console.error(err);
 		}
 	});
-	// pre/next post
-	var pre = Math.floor(Math.random()*10),
-		next = Math.floor(Math.random()*10+10),
-		pre = 'https://bing.ioliu.cn/v1/blur?d='+pre+'&w=640&h=480&r=1',
-		next = 'https://bing.ioliu.cn/v1/blur?d='+next+'&w=640&h=480&r=1';
-
-	$('.card-pre img').prop('src', pre);
-	$('.card-next img').prop('src', next);
+	function getImageUrl(url){
+		var url = 'https://cn.bing.com/'+url;
+			url = 'url('+url+')';
+		return url;
+	}
 }
 // material design button effect
 var addRippleEffect = function (e) {
