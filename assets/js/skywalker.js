@@ -97,31 +97,31 @@ $('.post main').scroll(function (){
 	}
 });
 // bing background
-if( $('.page').hasClass('post') ){
-	$.ajax({
-		type: 'GET',
-		url: 'http://127.0.0.1:8081/img/3',
-		dataType: 'json',
-		success: function(result){
-			if( result && result.status ){
-				var bg = result.data[0];
-					bg = 'url('+bg+')';
-				var pre = result.data[1];
-				var next = result.data[2];
-				//nav-bg
-				$('.post header.nav-wrapper').css('background',bg+' center center / cover  no-repeat');
-				//pre/next post
-				$('.card-pre img').prop('src', pre);
-				$('.card-next img').prop('src', next);
-			}else{
-				console.log(result.msg)
-			}
-		},
-		error: function(err){
-			console.error(err);
-		}
-	})
-}
+//if( $('.page').hasClass('post') ){
+	// $.ajax({
+	// 	type: 'GET',
+	// 	url: 'http://127.0.0.1:2368/img/3',
+	// 	dataType: 'json',
+	// 	success: function(result){
+	// 		if( result && result.status ){
+	// 			var bg = result.data[0];
+	// 				bg = 'url('+bg+')';
+	// 			var pre = result.data[1];
+	// 			var next = result.data[2];
+	// 			//nav-bg
+	// 			$('.post header.nav-wrapper').css('background',bg+' center center / cover  no-repeat');
+	// 			//pre/next post
+	// 			$('.card-pre img').prop('src', pre);
+	// 			$('.card-next img').prop('src', next);
+	// 		}else{
+	// 			console.log(result.msg)
+	// 		}
+	// 	},
+	// 	error: function(err){
+	// 		console.error(err);
+	// 	}
+	// })
+//}
 // material design button effect
 var addRippleEffect = function (e) {
 	console.log('233')
