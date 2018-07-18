@@ -26,7 +26,7 @@
 				<div>
 					<a id="show-slide-nav"><i class="fa fa-bars fa-lg"></i></a>
 					<p>
-						<span class="header-title">Lucifer</span>
+						<span class="header-title">{{@blog.title}}</span>
 						<span class="post-title">{{title}}</span>
 					</p>
 					<span></span>
@@ -49,8 +49,13 @@
 			<div class="col s6" style="padding-left:0;">
 		        <div class="card">
 		            <div class="card-image card-pre">
-		                <img src="https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302&timestamp=1">
-		                    <a href="{{url}}"><span class="card-title">{{title}}</span></a>
+			    
+				{{#if feature_image}}
+				<img src="{{feature_image}}">
+				{{else}}
+				<img src="https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302&timestamp=1">
+				{{/if}}		                    
+					<a href="{{url}}"><span class="card-title">{{title}}</span></a>
 		                </img>
 		            </div>
 		            <div class="card-content"><p>{{excerpt}}</p></div>
@@ -63,8 +68,12 @@
 			<div class="col s6" style="padding-right:0;">
 		        <div class="card">
 		            <div class="card-image card-next">
-		                <img src="https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302&timestamp=2">
-		                    <a href="{{url}}"><span class="card-title">{{title}}</span></a>
+				{{#if feature_image}}
+				<img src="{{feature_image}}">
+				{{else}}
+				<img src="https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302&timestamp=1">
+				{{/if}}		                    
+					<a href="{{url}}"><span class="card-title">{{title}}</span></a>
 		                </img>
 		            </div>
 		            <div class="card-content"><p>{{excerpt}}</p></div>
