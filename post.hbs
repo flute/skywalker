@@ -48,6 +48,7 @@
 			{{#prev_post}}
 			<div class="col s6" style="padding-left:0;">
 		        <div class="card">
+			    <a href="{{url}}" class="readmore"></a>
 		            <div class="card-image card-pre">
 			    
 				{{#if feature_image}}
@@ -55,8 +56,7 @@
 				{{else}}
 				<img src="https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302&timestamp=1">
 				{{/if}}		                    
-					<a href="{{url}}"><span class="card-title">{{title}}</span></a>
-		                </img>
+				<span class="card-title">{{title}}</span>
 		            </div>
 		            <div class="card-content"><p>{{excerpt}}</p></div>
 		            <div class="card-action"><a href="{{url}}">前一篇</a></div>
@@ -67,14 +67,14 @@
 			{{#next_post}}
 			<div class="col s6" style="padding-right:0;">
 		        <div class="card">
+			    <a href="{{url}}" class="readmore"></a>
 		            <div class="card-image card-next">
 				{{#if feature_image}}
 				<img src="{{feature_image}}">
 				{{else}}
 				<img src="https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302&timestamp=1">
 				{{/if}}		                    
-					<a href="{{url}}"><span class="card-title">{{title}}</span></a>
-		                </img>
+				<span class="card-title">{{title}}</span>
 		            </div>
 		            <div class="card-content"><p>{{excerpt}}</p></div>
 		            <div class="card-action" style="text-align: right;"><a href="{{url}}">后一篇</a></div>
