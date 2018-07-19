@@ -1,5 +1,5 @@
 // fullscreen cover
-if( $('.page').hasClass('common') && location.hash !== '#open' ){
+if( $('.page').hasClass('common') && location.pathname === '/' && location.hash !== '#open' ){
 	$('.index #menu').addClass('cover')
 }
 if( $(window).width() >= 768 ){
