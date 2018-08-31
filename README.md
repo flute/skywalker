@@ -14,7 +14,7 @@
 * 适配移动端和pc端
 * 随机获取bing图库图片作为背景图
 * 新增ghost博客文章归档页面
-* 使用disqus作为评论插件，可自行替换
+* ~~使用disqus作为评论插件，可自行替换~~ 使用畅言作为评论系统，修改样式屏蔽广告。
 * 主题采用flexbox布局
 * markdown样式与github相同，代码高亮使用highlight.js
 
