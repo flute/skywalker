@@ -1,11 +1,11 @@
 {{!< default}}
 <div class="row page post">
 	<div class="slidenav">
-		<aside id="menu" class="blue-grey darken-1" style="background-image:url({{@blog.cover_image}});">
+		<aside id="menu" class="blue-grey darken-1" style="background-size:cover;background-position:0 bottom;background-image:url({{@blog.cover_image}});">
 			<div class="bg-container">
 				<div class="profile">
 					<div class="avatar">
-						<a href="#open"><img src="{{@blog.logo}}" class="z-depth-4"></a>
+						<a href="#open"><img src="{{@blog.logo}}" class="no-z-depth-4"></a>
 						<span>{{@blog.title}}</span>
 						<p>{{@blog.description}}</p>
 					</div>
@@ -18,8 +18,8 @@
 		</aside>
 		<div class="closeslide"></div>
 	</div>
-	
-	<main> 
+
+	<main>
 		{{#post}}
 		<nav>
 			<header class="nav-wrapper blue-grey">
@@ -33,9 +33,9 @@
 				</div>
 			</header>
 		</nav>
-		
+
 		<div class="contents content-in z-depth-2">
-			
+
 			<article class="posts-content markdown-body">
 				<p class="posts-title">{{title}}</p>
 				<span class="post-time"><i class="fa fa-calendar"></i> {{date format="YYYY-MM-DD HH:mm:ss"}}</span>
@@ -50,12 +50,12 @@
 		        <div class="card">
 			    <a href="{{url}}" class="readmore"></a>
 		            <div class="card-image card-pre">
-			    
+
 				{{#if feature_image}}
 				<img src="{{feature_image}}">
 				{{else}}
 				<img src="">
-				{{/if}}		                    
+				{{/if}}
 				<span class="card-title">{{title}}</span>
 		            </div>
 		            <div class="card-content"><p>{{excerpt}}</p></div>
@@ -73,20 +73,20 @@
 				<img src="{{feature_image}}">
 				{{else}}
 				<img src="">
-				{{/if}}		                    
+				{{/if}}
 				<span class="card-title">{{title}}</span>
 		            </div>
 		            <div class="card-content"><p>{{excerpt}}</p></div>
 		            <div class="card-action" style="text-align: right;"><a href="{{url}}">后一篇</a></div>
 		        </div>
-		    </div>	
+		    </div>
 			{{/next_post}}
 
 			{{> comments}}
 		</div>
-		{{/post}} 
+		{{/post}}
 		<div class="content-in" style="margin-top: 50px;">
-			{{> footer}} 
+			{{> footer}}
 		</div>
 	</main>
 </div>

@@ -1,7 +1,15 @@
 {
-    "name": "SkyWalker",
+    "name": "skywalker",
+    "description": "A sample material design theme",
     "version": "2.0.0",
-    "description": "ludis's SkyWalker,edit by lucifer",
-    "author": "Lucifer",
-    "homepage": "https://www.lubaba.com/"
+    "engines": {
+        "ghost": ">=2.0.0"
+    },
+    "license": "MIT",
+    "author": {
+        "email": "service@ldsun.com"
+    },
+    "config": {
+        "posts_per_page": 10
+    }
 }

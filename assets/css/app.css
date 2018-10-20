@@ -1278,7 +1278,7 @@ nav a {
 
 .markdown-body code {
     font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
-    font-size: 12px;
+    font-size: 12px
 }
 
 .markdown-body pre {
@@ -1778,7 +1778,8 @@ header.nav-wrapper {
 .avatar img {
     width: 120px;
     height: 120px;
-    border-radius: 60px
+    border-radius: 60px;
+    background: rgba(255,255,255,.3);
 }
 
 .avatar span {
@@ -1900,7 +1901,9 @@ ul.link li {
 
 .item-footer a {
     margin-right: 10px;
-    font-size: 12px
+    font-size: 12px;
+    z-index: 2;
+    cursor: pointer;
 }
 
 .item-header p {
@@ -2526,13 +2529,13 @@ nav a {
 .markdown-body h4,
 .markdown-body h5,
 .markdown-body h6 {
-	color: #0d1a26;
-	font-family: Lato, "Monospaced Number", "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	margin: 1.6em 0 0.6em;
-	font-weight: 500;
-	clear: both;
-	display: flex;
-	align-items: center;
+    color: #0d1a26;
+    font-family: Lato, "Monospaced Number", "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 1.6em 0 0.6em;
+    font-weight: 500;
+    clear: both;
+    display: flex;
+    align-items: center;
 }
 .markdown-body h3 {
   font-size: 18px;
@@ -2547,12 +2550,12 @@ nav a {
   font-size: 12px;
 }
 .markdown-body pre.text{
-	font-family: "Lucida Console", Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-	font-size: 13px;
+    font-family: "Lucida Console", Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 13px;
     color: #314659;
-	background: #f2f4f5;
-	border-radius: 2px;
-	padding: 12px 20px;
+    background: #f2f4f5;
+    border-radius: 2px;
+    padding: 12px 20px;
     margin: 16px 0;
     overflow: auto;
     color: black;
@@ -2572,28 +2575,28 @@ nav a {
 }
 /* for block of numbers */
 td.hljs-ln-numbers {
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 
-	text-align: center;
-	color: #666;
-	border-right: 1px solid rgba(255, 255, 255, .25);
-	vertical-align: top;
-	padding-right: 5px !important;
+    text-align: center;
+    color: #666;
+    border-right: 1px solid rgba(255, 255, 255, .25);
+    vertical-align: top;
+    padding-right: 5px !important;
 
-	/* your custom style here */
+    /* your custom style here */
 }
 
 /* for block of code */
 td.hljs-ln-code {
-	padding-left: 10px !important;
+    padding-left: 10px !important;
 }
 table.hljs-ln{
-	margin-bottom: 0 !important;
+    margin-bottom: 0 !important;
 }
 
 .lightense-open{
@@ -2603,5 +2606,5 @@ aside ul li{
     list-style: none;
 }
 #feedAv{
-	display:none !important;
+    display:none !important;
 }

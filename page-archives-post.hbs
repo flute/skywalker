@@ -5,7 +5,7 @@
         <div class="closeslide"></div>
     </div>
     <main>
-    	<nav>
+        <nav>
             <header class="nav-wrapper blue-grey">
                 <div>
                     <a id="show-slide-nav"><i class="fa fa-bars fa-lg"></i></a>
@@ -20,7 +20,7 @@
             {{#post}}
             <article>
                 <div style="text-align:center"><h4 class="archives-title">Archives</h4></div>
-				<article class="archives"></article>
+                <article class="archives"></article>
             </article>
             <div class="noborderfooter" style="margin-top:50px;">
                 {{> footer}}
@@ -32,7 +32,7 @@
 {{/post}}
 <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/moment.js/2.14.1/moment.min.js"></script>
-<script type = "text/javascript"> 
+<script type = "text/javascript">
 jQuery(document).ready(function() {
     $.get(ghost.url.api('posts', {
         fields: "title,slug,published_at",
